@@ -2,4 +2,5 @@ FROM alpine
 
 COPY script.sh /tmp
 COPY moo /tmp
-CMD ["ash", "ping app && sleep 10"]
+COPY Dockerfile /tmp
+CMD ["sleep", "999"]
