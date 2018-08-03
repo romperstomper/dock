@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  mytest:
+   container_name: mytest
+   build:
+    context: .
+    dockerfile: Dockerfile-test
+   image: mytest
+   volumes:
+     - test-volume:/tmp
+
+  app:
+   container_name: app
+   build: . 
+   image: app
+   volumes:
+     - test-volume:/tmp
+
+volumes:
+ test-volume:
